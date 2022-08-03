@@ -7,15 +7,15 @@ function onCheckSubmit(event) {
 
   const { email, password } = event.currentTarget;
 
-  if (email.value === "" || password.value === "") {
-    alert("Заповніть всі поля");
-  }
-
   const formData = {
     Email: email.value,
     Password: password.value,
   };
 
+  if (email.value === "" || password.value === "") {
+    alert("Заповніть всі поля");
+  } else {
+    console.log(formData);
+  }
   event.currentTarget.reset();
-  console.log(formData);
 }

@@ -24,20 +24,3 @@ const createGalleryImageMarkup = ({ url, alt }) => {
 const createGalleryImages = images.map(createGalleryImageMarkup).join();
 galleryRef.insertAdjacentHTML("afterbegin", createGalleryImages);
 console.log(createGalleryImages);
-
-// const galleryRef = document.querySelector(".gallery");
-
-// const createGalleryImages = (arr) => {
-//   return arr.map((image) => {
-//     const itemRef = document.createElement("li");
-//     itemRef.classList.add("gallery__item");
-//     const imageRef = document.createElement("img");
-//     imageRef.classList.add("gallery__img");
-//     imageRef.src = image.url;
-//     imageRef.alt = image.alt;
-
-//     itemRef.appendChild(imageRef);
-//     galleryRef.appendChild(itemRef);
-//     // console.log(imageRef);
-//   });
-// };

@@ -16,6 +16,6 @@ function onCheckSubmit(event) {
     alert("Заповніть всі поля");
   } else {
     console.log(formData);
+    event.currentTarget.reset();
   }
-  event.currentTarget.reset();
 }

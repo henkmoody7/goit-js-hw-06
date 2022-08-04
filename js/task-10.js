@@ -11,14 +11,17 @@ function createBoxes(amount) {
   amount = inputRef.value;
   let width = 30;
   let height = 30;
+  const divEl = document.createDocumentFragment();
   for (let i = 1; i <= amount; i += 1) {
     const blockElements = document.createElement("div");
     blockElements.classList.add("boxes__item");
     blockElements.style.cssText = `width: ${width}px; height: ${height}px; background-color: ${getRandomHexColor()}`;
-    boxesRef.append(blockElements);
+
     width += 10;
     height += 10;
+    divEl.append(blockElements);
   }
+  boxesRef.append(divEl);
 }
 
 function destroyBoxes() {

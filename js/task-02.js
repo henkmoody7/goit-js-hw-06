@@ -6,24 +6,14 @@ const ingredients = [
   "Herbs",
   "Condiments",
 ];
+
 const ingredientsListRef = document.querySelector("#ingredients");
 
-// const elements = ingredients.map((ingredient) => {
-//   const itemRef = document.createElement("li");
-//   itemRef.classList.add("item");
-//   itemRef.textContent = ingredient;
-//   ingredientsListRef.appendChild(itemRef);
-//   // console.log(itemRef);
-//   // return itemRef;
-// });
+const createIngredientMarkup = ingredients.map((ingredient) => {
+  const itemRef = document.createElement("li");
+  itemRef.classList.add("item");
+  itemRef.textContent = ingredient;
+  return itemRef;
+});
 
-const createIngredientsList = (arr) => {
-  return arr.map((ingredient) => {
-    const itemRef = document.createElement("li");
-    itemRef.classList.add("item");
-    itemRef.textContent = ingredient;
-    ingredientsListRef.appendChild(itemRef);
-    return itemRef;
-  });
-};
-createIngredientsList(ingredients);
+ingredientsListRef.append(...createIngredientMarkup);
